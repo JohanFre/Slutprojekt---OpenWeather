@@ -1,14 +1,32 @@
 package com.example.openweather;
 
-public class WeatherBean {
+public class WeatherBean extends Reader {
 
-    public String weather;
+    public static String tempInfo;
+    public static String weatherInfo;
+    public static String descriptionInfo;
 
-    public String getWeather() {
-        return weather;
+    public static String getTempInfo() {
+        return tempInfo;
     }
 
-    public void setWeather(String weather) {
-        this.weather = weather;
+    public static void setTempInfo(String tempInfo) {
+        WeatherBean.tempInfo = tempInfo;
+    }
+
+    public static String getWeatherInfo() {
+        return weatherInfo;
+    }
+
+    public static void setWeatherInfo(String weatherInfo) {
+        WeatherBean.weatherInfo = weatherInfo;
+    }
+
+    public static String getDescriptionInfo() {
+        return descriptionInfo;
+    }
+
+    public static void setDescriptionInfo(String descriptionInfo) {
+        WeatherBean.descriptionInfo = descriptionInfo;
     }
 }

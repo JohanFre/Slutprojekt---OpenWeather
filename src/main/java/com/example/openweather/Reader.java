@@ -11,14 +11,10 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-
 public class Reader {
 
 
-    public static void main(String[] args) throws IOException, JSONException {
-
-        
-
+    public static void method() throws IOException, JSONException {
         URL url = new URL("https://api.openweathermap.org/data/2.5/weather?q=rome&appid=b0a57c1fc2dbb74642fdc7bb28541a87");
         URLConnection urlConn = url.openConnection();
         BufferedReader in = new BufferedReader(
@@ -40,16 +36,21 @@ public class Reader {
 
         String temp = json.getJSONObject("main").getString("temp");
         System.out.println(temp);
+        WeatherBean.setTempInfo(temp);
+
 
         JSONArray jsonArray = (JSONArray) json.get("weather");
         for (int i = 0; i <jsonArray.length(); i++) {
             JSONObject obj= (JSONObject) jsonArray.get(i);
             String weather = (String) obj.get("main");
-            String descrip = (String) obj.get("description");
-            System.out.println(weather);
-            System.out.println(descrip);
-        }
+            String description = (String) obj.get("description");
+            WeatherBean.setWeatherInfo(weather);
+            WeatherBean.setDescriptionInfo(description);
 
+            System.out.println(weather);
+            System.out.println(description);
+        }
     }
+
 }
 
