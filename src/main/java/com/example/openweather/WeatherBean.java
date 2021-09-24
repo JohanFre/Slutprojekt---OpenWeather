@@ -6,6 +6,16 @@ public class WeatherBean extends Reader {
     public static String weatherInfo;
     public static String descriptionInfo;
 
+    public static String getCityInfo() {
+        return cityInfo;
+    }
+
+    public static void setCityInfo(String cityInfo) {
+        WeatherBean.cityInfo = cityInfo;
+    }
+
+    public static String cityInfo;
+
     public static String getTempInfo() {
         return tempInfo;
     }
@@ -29,4 +39,6 @@ public class WeatherBean extends Reader {
     public static void setDescriptionInfo(String descriptionInfo) {
         WeatherBean.descriptionInfo = descriptionInfo;
     }
+
+
 }

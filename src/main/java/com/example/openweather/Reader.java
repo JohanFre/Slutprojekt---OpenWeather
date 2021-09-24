@@ -35,9 +35,21 @@ public class Reader {
 
         JSONObject json = new JSONObject (String.valueOf(ApiResponse));
 
-        String temp = json.getJSONObject("main").getString("temp");
-        System.out.println(temp);
-        WeatherBean.setTempInfo(temp);
+        String tempKelvin = json.getJSONObject("main").getString("temp");
+
+        float celsFloat = Float.parseFloat(tempKelvin);
+
+        celsFloat = (float) (celsFloat - 273.15);
+
+        String tempCels = String.format("%.01f", celsFloat);
+
+        //String tempCels = Float.toString(celsFloat);
+
+        WeatherBean.setTempInfo(tempCels + " °C");
+
+        String city = json.getString("name");
+        System.out.println(city);
+        WeatherBean.setCityInfo(city);
 
 
         JSONArray jsonArray = (JSONArray) json.get("weather");

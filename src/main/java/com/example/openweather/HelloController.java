@@ -24,6 +24,6 @@ public class HelloController {
 
         Reader.method();
 
-        welcomeText.setText(WeatherBean.getTempInfo() + " " + WeatherBean.getWeatherInfo() + " " + WeatherBean.getDescriptionInfo());
+        welcomeText.setText(WeatherBean.getTempInfo() + " " + WeatherBean.getWeatherInfo() + " " + WeatherBean.getDescriptionInfo() + " " + WeatherBean.getCityInfo());
     }
 }
