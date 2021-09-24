@@ -13,9 +13,10 @@ import java.net.URLConnection;
 
 public class Reader {
 
+    public static String search = "lund";
 
     public static void method() throws IOException, JSONException {
-        URL url = new URL("https://api.openweathermap.org/data/2.5/weather?q=rome&appid=b0a57c1fc2dbb74642fdc7bb28541a87");
+        URL url = new URL("https://api.openweathermap.org/data/2.5/weather?q=" + search + "&appid=b0a57c1fc2dbb74642fdc7bb28541a87");
         URLConnection urlConn = url.openConnection();
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(
