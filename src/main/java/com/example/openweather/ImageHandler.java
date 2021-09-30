@@ -1,7 +1,12 @@
 package com.example.openweather;
 
 public class ImageHandler {
+
     public static String getImage(String iconInfo) {
+
+
+        // Switch to determine which icon to return depending on api icon String.
+
         switch (iconInfo){
             case "01d":
                 return "file:src/main/resources/images/01d.png";
@@ -27,7 +32,10 @@ public class ImageHandler {
                 return "file:src/main/resources/images/13.png";
             case "50d": case "50n":
                 return "file:src/main/resources/images/50.png";
+
         }
         return "file:src/main/resources/images/01d.jpg";
+
     }
+
 }

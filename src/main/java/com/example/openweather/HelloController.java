@@ -29,14 +29,17 @@ public class HelloController {
     @FXML
     protected void searchBtnClick() throws JSONException, IOException {
 
+        // Getting user-input text from textfield in hello-view.fxml
         String cityInput = textField.getText();
 
+        // Sets searched string in Reader to user input.
         Reader.search = cityInput;
 
+        // Runs the api fetch.
         Reader.method();
 
+        // Sets the information inside hello-view.fxml which it then presents.
         img.setImage(new Image(ImageHandler.getImage(WeatherBean.getIconInfo())));
-
         cityText.setText(WeatherBean.getCityInfo());
         temp.setText(WeatherBean.getTempInfo());
         weather.setText(WeatherBean.getWeatherInfo());

@@ -11,11 +11,13 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.openweather.HelloController">
    <children>
+      <!-- Setting the background picture of the program. -->
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <image>
             <Image url="@../../../beautiful-weather.jpg" />
          </image>
       </ImageView>
+      <!-- Creates labels that presents the information from the API. -->
       <Pane layoutY="229.0" prefHeight="171.0" prefWidth="600.0" style="-fx-background-color: rgba(53,39,40,0.5);">
          <children>
             <Label fx:id="cityText" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="14.0" prefHeight="25.0" prefWidth="161.0" text="City Info" textFill="WHITE">
@@ -36,9 +38,11 @@
                   <Font size="16.0" />
                </font></Label>
             <Separator layoutX="213.0" layoutY="63.0" prefHeight="0.0" prefWidth="174.0" />
+            <!-- Presents the icon image for the weather type. -->
             <ImageView fx:id="img" fitHeight="119.0" fitWidth="130.0" layoutX="35.0" layoutY="35.0" pickOnBounds="true" />
          </children>
       </Pane>
+      <!-- Creates field for user input and adding search button to fetch the API on the searched city. -->
       <Pane layoutX="178.0" layoutY="171.0" prefHeight="58.0" prefWidth="245.0" style="-fx-background-color: rgba(53,39,40,0.5);">
          <children>
             <TextField fx:id="textField" layoutX="14.0" layoutY="17.0" prefHeight="25.0" prefWidth="130.0" promptText="Search for city...">

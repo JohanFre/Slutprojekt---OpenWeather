@@ -2,20 +2,15 @@ package com.example.openweather;
 
 public class WeatherBean extends Reader {
 
+    // Bean for setting and getting the API information.
+
     public static String tempInfo;
     public static String weatherInfo;
     public static String descriptionInfo;
     public static String iconInfo;
-
-    public static String getCityInfo() {
-        return cityInfo;
-    }
-
-    public static void setCityInfo(String cityInfo) {
-        WeatherBean.cityInfo = cityInfo;
-    }
-
     public static String cityInfo;
+
+
 
     public static String getTempInfo() {
         return tempInfo;
@@ -41,12 +36,20 @@ public class WeatherBean extends Reader {
         WeatherBean.descriptionInfo = descriptionInfo;
     }
 
+    public static String getIconInfo() {
+        return iconInfo;
+    }
 
     public static void setIconInfo(String iconInfo) {
         WeatherBean.iconInfo = iconInfo;
     }
 
-    public static String getIconInfo() {
-        return iconInfo;
+    public static String getCityInfo() {
+        return cityInfo;
     }
+
+    public static void setCityInfo(String cityInfo) {
+        WeatherBean.cityInfo = cityInfo;
+    }
+
 }
