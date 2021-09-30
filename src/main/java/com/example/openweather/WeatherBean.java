@@ -5,6 +5,7 @@ public class WeatherBean extends Reader {
     public static String tempInfo;
     public static String weatherInfo;
     public static String descriptionInfo;
+    public static String iconInfo;
 
     public static String getCityInfo() {
         return cityInfo;
@@ -41,4 +42,11 @@ public class WeatherBean extends Reader {
     }
 
 
+    public static void setIconInfo(String iconInfo) {
+        WeatherBean.iconInfo = iconInfo;
+    }
+
+    public static String getIconInfo() {
+        return iconInfo;
+    }
 }

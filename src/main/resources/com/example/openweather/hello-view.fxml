@@ -2,45 +2,51 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.openweather.HelloController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <image>
             <Image url="@../../../beautiful-weather.jpg" />
          </image>
       </ImageView>
-      <Pane layoutY="-7.0" prefHeight="408.0" prefWidth="200.0" style="-fx-background-color: rgba(53,39,40,0.5);">
+      <Pane layoutY="229.0" prefHeight="171.0" prefWidth="600.0" style="-fx-background-color: rgba(53,39,40,0.5);">
          <children>
-            <Label contentDisplay="CENTER" layoutX="20.0" layoutY="14.0" prefHeight="25.0" prefWidth="161.0" text="City Info" textFill="WHITE">
+            <Label fx:id="cityText" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="14.0" prefHeight="25.0" prefWidth="161.0" text="City Info" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="35.0" />
                </font>
             </Label>
-            <Label layoutX="20.0" layoutY="97.0" text="Temperatue" textFill="WHITE" />
-            <Label layoutX="20.0" layoutY="169.0" text="Weather info" textFill="WHITE" />
-            <Label layoutX="20.0" layoutY="232.0" text="Description" textFill="WHITE" />
+            <Label fx:id="temp" layoutX="196.0" layoutY="80.0" text="Temperatue" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font></Label>
+            <Label fx:id="weather" alignment="CENTER" contentDisplay="CENTER" layoutX="381.0" layoutY="80.0" prefHeight="27.0" prefWidth="219.0" text="Weather info" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="description" alignment="CENTER" contentDisplay="CENTER" layoutX="381.0" layoutY="110.0" prefHeight="25.0" prefWidth="219.0" text="Description" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Separator layoutX="213.0" layoutY="63.0" prefHeight="0.0" prefWidth="174.0" />
+            <ImageView fx:id="img" fitHeight="119.0" fitWidth="130.0" layoutX="35.0" layoutY="35.0" pickOnBounds="true" />
          </children>
       </Pane>
-      <Pane layoutX="275.0" layoutY="244.0" prefHeight="156.0" prefWidth="325.0" style="-fx-background-color: rgba(53,39,40,0.5);">
+      <Pane layoutX="178.0" layoutY="171.0" prefHeight="58.0" prefWidth="245.0" style="-fx-background-color: rgba(53,39,40,0.5);">
          <children>
-            <Label layoutX="31.0" layoutY="32.0" text="Label" textFill="WHITE" />
-         </children>
-      </Pane>
-      <Pane layoutX="356.0" prefHeight="58.0" prefWidth="244.0" style="-fx-background-color: rgba(53,39,40,0.5);">
-         <children>
-            <TextField layoutX="14.0" layoutY="17.0" prefHeight="25.0" prefWidth="130.0" promptText="Search for city...">
+            <TextField fx:id="textField" layoutX="14.0" layoutY="17.0" prefHeight="25.0" prefWidth="130.0" promptText="Search for city...">
                <font>
                   <Font name="Calibri Bold" size="12.0" />
                </font>
             </TextField>
-            <Button layoutX="153.0" layoutY="17.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Search" />
+            <Button layoutX="153.0" layoutY="17.0" mnemonicParsing="false" onAction="#searchBtnClick" prefHeight="25.0" prefWidth="77.0" text="Search" />
          </children>
       </Pane>
    </children>
